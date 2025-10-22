@@ -1,6 +1,7 @@
 "use client"
-import { PricingSection } from "@/components/ui/pricing-section"
-import type { PricingTier } from "@/components/ui/pricing-card"
+import { useState } from "react"
+import { PricingCard, type PricingTier } from "@/components/ui/pricing-card"
+import { Tab } from "@/components/ui/pricing-tab"
 
 const TIERS: PricingTier[] = [
   {
@@ -50,15 +51,36 @@ const TIERS: PricingTier[] = [
 ]
 
 export default function PriceSection() {
+  const [frequency, setFrequency] = useState("monthly")
+
   return (
     <section id="pricing" className="w-full py-20 px-4 sm:px-6 lg:px-8 bg-background rounded-t-4xl">
       <div className="max-w-7xl mx-auto">
-        <PricingSection
-          title="Simple, Transparent Pricing"
-          subtitle="Choose the perfect plan for your needs"
-          frequencies={["monthly", "yearly"]}
-          tiers={TIERS}
-        />
+        <div className="flex flex-col items-center gap-10">
+          <div className="space-y-7 text-center">
+            <div className="space-y-4">
+              <h1 className="text-4xl font-medium md:text-5xl">Simple, Transparent Pricing</h1>
+              <p className="text-muted-foreground">Choose the perfect plan for your needs</p>
+            </div>
+            <div className="mx-auto flex w-fit rounded-full bg-muted p-1">
+              {["monthly", "yearly"].map((freq) => (
+                <Tab
+                  key={freq}
+                  text={freq}
+                  selected={frequency === freq}
+                  setSelected={setFrequency}
+                  discount={freq === "yearly"}
+                />
+              ))}
+            </div>
+          </div>
+
+          <div className="grid w-full gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {TIERS.map((tier) => (
+              <PricingCard key={tier.name} tier={tier} frequency={frequency} />
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   )

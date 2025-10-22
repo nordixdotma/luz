@@ -32,7 +32,7 @@ export function Tab({ text, selected, setSelected, discount = false }: TabProps)
       {discount && (
         <Badge
           variant="secondary"
-          className={cn("relative z-10 whitespace-nowrap shadow-none bg-green-200 rounded-full", selected && "bg-green-200 rounded-full")}
+          className={cn("relative z-10 whitespace-nowrap shadow-none bg-green-200 text-green-700 rounded-full", selected && "bg-green-200 text-green-700 rounded-full")}
         >
           Save 35%
         </Badge>
