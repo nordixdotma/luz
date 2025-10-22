@@ -1,8 +1,8 @@
-import Header from "@/components/header"
-import HeroSection from "@/components/hero-section"
-import PriceSection from "@/components/price-section"
-import Testimonials from "@/components/testimonials"
-import Footer from "@/components/footer"
+import Header from "@/components/homepage/header"
+import HeroSection from "@/components/homepage/hero-section"
+import PriceSection from "@/components/homepage/price-section"
+import Testimonials from "@/components/homepage/testimonials"
+import Footer from "@/components/homepage/footer"
 
 export default function Home() {
   return (
