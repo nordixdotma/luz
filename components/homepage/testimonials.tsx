@@ -40,7 +40,7 @@ export default function Testimonials() {
   ]
 
   return (
-    <section id="testimonials" className="w-full py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
+    <section id="testimonials" className="w-full py-20 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 text-balance">Loved by Teams Worldwide</h2>

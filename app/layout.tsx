@@ -20,7 +20,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${urbanist.className} antialiased`}>
+      <body className={`${urbanist.className} antialiased relative`}>
+        <div className="fixed inset-0 w-full h-full -z-50">
+          <video autoPlay muted loop className="w-full h-full object-cover" poster="/1.mp4">
+            <source src="/1.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-black/5" />
+        </div>
         {children}
         <Analytics />
       </body>
